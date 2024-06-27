@@ -1,1 +1,0 @@
-export const MisImage = { src: '/images/main-mis.svg', alt: 'Image 1', width: 500, height: 300 };
