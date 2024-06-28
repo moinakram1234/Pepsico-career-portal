@@ -1,8 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import styles from "./mto.module.css";
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
-// ...
 function LoadingBar() {
   const [progress, setProgress] = useState(0);
 
@@ -21,25 +20,39 @@ function LoadingBar() {
   }, []);
 
   return (
-    <div className="flex items-center h-[100vh] justify-center">
-      <motion.div 
-        className={`flex flex-col w-[35%] h-[35vh] items-center rounded-lg ${styles.mtobg} bg-black justify-center`}
-        initial={{ borderRadius: "200px" }}
-        animate={{ borderRadius: "0px" }}
-        transition={{ duration: 2 }}
-      >
-        <motion.img
-          className={`${styles.loading}  w-32 h-32 mb-10`}
-          src="/logo.png"
-          alt="logo"
-        />
-        <div className="bg-gray-200 h-2 w-64 rounded-full relative">
-          <div
-            className="bg-blue-500 h-2 rounded-full absolute bottom-0"
-            style={{ width: `${progress}%` }}
+    <div>
+      <div className={styles.bg}>
+        <motion.div
+          className={styles.logoContainer}
+          animate={{
+            scale: [1, 1.2, 1.2, 1],
+            rotate: [0, 360, 360, 0],
+            borderRadius: ["0%", "50%", "50%", "0%"],
+          }}
+          transition={{
+            duration: 3,
+            ease: "easeInOut",
+            times: [0, 0.5, 0.8, 1],
+            repeat: Infinity,
+            repeatDelay: 0.5,
+          }}
+        >
+          <img src="/logo.png" alt="Logo" className={styles.logo} />
+        </motion.div>
+        <span className="text-xl md:text-4xl font-bold  p-10 text-[#2E3192]
+        
+        
+        ">Haidri Beverages Private Limited</span>
+        <div className={styles.progressBar}>
+          <motion.div
+            className={styles.progress}
+            initial={{ width: 0 }}
+            animate={{ width: `${progress}%` }}
+            transition={{ duration: 1 }}
           />
         </div>
-      </motion.div>
+        <div className={styles.progressText}>{progress}%</div>
+      </div>
     </div>
   );
 }

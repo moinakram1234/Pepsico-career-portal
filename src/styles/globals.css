@@ -737,3 +737,21 @@ ul li .descr::before {
 .credits a {
   color: var(--color);
 }
+.balloon {
+  position: relative;
+  width: 40px;
+  height: 60px;
+  background-color: #fbbf24; /* yellow-400 */
+  border-radius: 50% / 60% 60% 40% 40%;
+}
+
+.balloon::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 10px solid transparent;
+  border-top-color: #fbbf24; /* yellow-400 */
+}
+

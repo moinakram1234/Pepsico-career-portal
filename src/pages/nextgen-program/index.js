@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Intro from "@/components/NextGen/intro";
-import Whynextgen from "@/components/NextGen/whynextgen";
+
 import LoadingBar from "@/components/NextGen/loading";
-import Whatsinitforyou from "@/components/NextGen/whatsInItForYou";
+
 import ApplicationProcess from "@/components/NextGen/app_process";
 import MtoAbout from "@/components/NextGen/mtoabout";
 
@@ -26,9 +26,8 @@ const Index = () => {
           <div className="h-screen">
             <Intro />
           </div>
-          <div className="h-screen">
-            <Whynextgen />
-          </div>
+         
+          {/* 
           <div className="h-screen">
             <Whatsinitforyou />
           </div>
@@ -37,8 +36,8 @@ const Index = () => {
           </div>
           <div class="h-[100vh]">
             <MtoAbout />
-          </div>
-          <div></div>
+          </div> */}
+          
         </main>
       )}
     </>
