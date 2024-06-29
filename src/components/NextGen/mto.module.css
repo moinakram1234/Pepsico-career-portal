@@ -246,3 +246,13 @@
   font-size: 18px;
   font-weight: bold;
 }
+/* Ensure the parent container has a relative position */
+.parentcontainer {
+  position: relative;
+}
+
+/* Content that should appear above the shapes */
+.overlappingcontent {
+  position: relative;
+  z-index: 20; /* Higher than the shapes */
+}

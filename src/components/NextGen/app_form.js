@@ -25,7 +25,6 @@ const Form = ({ email }) => {
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     Useremail: email,
- 
     personalInfo: {
       name: "",
       gender: "",
@@ -42,7 +41,6 @@ const Form = ({ email }) => {
       areyoucontentcreator: "",
     },
     education: [],
-  
     newEducation: {
       DegreeName: "",
       InstituteName: "",
@@ -98,25 +96,23 @@ const Form = ({ email }) => {
       case 3:
         return (
           <WorkExperience
-          formData={formData}
-          handleChange={handleWorkExperienceChange}
-          addWorkExperience={addWorkExperience}
-        />
+            formData={formData}
+            handleChange={handleWorkExperienceChange}
+            addWorkExperience={addWorkExperience}
+          />
         );
       case 4:
         return (
           <InternshipPreference
-          formData={formData.internshipPreference}
-          handleChange={handleInternshipPreferenceChange}
-        />
+            formData={formData.internshipPreference}
+            handleChange={handleInternshipPreferenceChange}
+          />
         );
       case 5:
         return <Preview formData={formData} />;
-        default:
-          return null;
-      }
-     
-       
+      default:
+        return null;
+    }
   };
 
   const handleSubmit = async () => {
@@ -167,7 +163,6 @@ const Form = ({ email }) => {
     }));
   };
 
-
   const handleEducationChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -184,18 +179,19 @@ const Form = ({ email }) => {
       ...prev,
       education: [...prev.education, prev.newEducation],
       newEducation: {
-      DegreeName: "",
-      InstituteName: "",
-      DegreeLevel: "",
-      DegreeSpecialization: [],
-      Graduation_year: "",
-      ResultType: "",
-      percentage: "",
-      CGPA: "",
-      Outof: "",
+        DegreeName: "",
+        InstituteName: "",
+        DegreeLevel: "",
+        DegreeSpecialization: [],
+        Graduation_year: "",
+        ResultType: "",
+        percentage: "",
+        CGPA: "",
+        Outof: "",
       },
     }));
   };
+
   const handleWorkExperienceChange = (e) => {
     const { name, value, type, checked } = e.target;
     const updatedValue = type === "checkbox" ? checked : value;
@@ -242,18 +238,20 @@ const Form = ({ email }) => {
   };
 
   return (
-    <div className="w-[70%] mx-auto p-10 shadow-lg m-10">
-    <div className=" flex justify-center">   <img src="/images/logo.png" alt="Logo" className="w-32 h-32 object-contain mb-4" /></div>
-      <h1 className="text-2xl mb-4 ">Haidri Beverages NextGen Program 2024</h1>
-      <div className="flex  space-x-4 justify-between mb-8">
+    <div className="w-full max-w-4xl  mx-auto p-4 md:p-4 shadow-lg">
+      <div className="flex justify-center lg:mb-4">
+        <img src="/images/logo.png" alt="Logo" className="w-44 lg:w-72 h-auto" />
+      </div>
+      <h1 className="lg:text-2xl text-lg mb-4 text-center">Haidri Beverages NextGen Program 2024</h1>
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
         {steps.map((stepLabel, index) => (
           <div
             key={index}
-            className={`p-5 border rounded-lg h-20 ${
+            className={`p-2 md:p-5 border rounded-lg text-center ${
               step === index + 1 ? "bg-green-500 text-white" : "bg-gray-200"
             }`}
-            // onClick={() => setStep(index + 1)}
-          >  {stepLabel.label}
+          >
+            {stepLabel.label}
           </div>
         ))}
       </div>
@@ -268,23 +266,23 @@ const Form = ({ email }) => {
             {step > 1 && (
               <button
                 onClick={prevStep}
-                className="bg-gray-500 text-white  p-2 rounded"
+                className="bg-gray-500 text-white p-2 rounded"
               >
                 Previous
               </button>
             )}
-            {step < 6 && (
+            {step < 5 && (
               <button
                 onClick={nextStep}
-                className="bg-green-500 text-white px-2 py-2 rounded"
+                className="bg-green-500 text-white p-2 rounded"
               >
                 Save & Next
               </button>
             )}
-            {step == 6 && (
+            {step === 5 && (
               <button
                 onClick={handleSubmit}
-                className="bg-green-500 text-white px-4 py-2 rounded mt-5"
+                className="bg-green-500 text-white px-4 py-2 rounded"
               >
                 Submit
               </button>

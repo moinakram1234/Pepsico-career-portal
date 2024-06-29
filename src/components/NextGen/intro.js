@@ -164,10 +164,10 @@ const Home = () => {
         </div>
       </div>
       <ProgramOverview/>
-      {/* <LearningJourney/>
+      <LearningJourney/>
       <ApplicationProcess />
-      <IdealCandidate/> */}
-      {/* <Footer/> */}
+      <IdealCandidate/>
+      <Footer/>
     </>
   );
 };

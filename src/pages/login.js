@@ -47,7 +47,7 @@ const Login = () => {
           const emailCheckData = await emailCheckResponse.json();
          
           if (emailCheckData.exists) {
-            router.push("/nextgen-program/alreadysubmitted");
+            router.push("/nextgen-program/applicationstatus");
           } else {
             router.push("/nextgen-program/aplicationform");
           }

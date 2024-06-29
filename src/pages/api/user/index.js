@@ -18,7 +18,7 @@ export default async function handler(req, res) {
         const user = await getUserByUsernameAndPassword(email, userPassword);
 
         if (user && user._id) {
-          const expiresIn = 3600 * 12 * 1; // 1 hour in seconds
+      const expiresIn = 3600 * 24;
           // User authentication successful, create a JWT token
           const token = jwt.sign(
             { userId: user._id, email: user.email, isadmin: user.isAdmin, phone:user.Phone, CNIC:user.CNIC },

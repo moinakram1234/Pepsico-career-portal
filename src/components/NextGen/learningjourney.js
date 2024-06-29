@@ -1,29 +1,31 @@
+import React from 'react';
+
 export default function LearningJourney() {
   return (
-    <div className="h-[100vh] flex ">
-      <div className="w-[70%]">
-        <div className="flex flex-col h-full  bg-white ">
-          <div className=" rounded-lg h-full pl-8 pr-10  text-center">
-            <h1 className="text-2xl  font-bold text-white  bg-[#6C59CD] p-2 mb-4">
+    <div className="h-[100vh] flex flex-col lg:flex-row">
+      <div className="lg:w-[70%] w-full">
+        <div className="flex flex-col h-full bg-[#E7A956] p-4 lg:p-8">
+          <div className="rounded-lg flex flex-col items-center h-full text-center bg-white">
+            <h1 className="text-2xl font-bold lg:w-[70%] text-white bg-[#6C59CD] p-2 mb-4">
               YOUR LEARNING JOURNEY
             </h1>
-            <div className="mt-20">
-              <ul className="text-left ">
-                <li className="mb-4 text-xl">
+            <div className="mt-10 lg:mt-20 z-10">
+              <ul className="text-left space-y-4">
+                <li className="text-xl">
                   Receive guidance from a dedicated supervisor/mentor.
                 </li>
-                <li className="mb-4 text-xl">
+                <li className="text-xl">
                   Personal assessment exercise to define your career goals and
                   aspirations.
                 </li>
-                <li className="mb-4 text-xl">
+                <li className="text-xl">
                   Rotation every 3-6 months to gain diverse experience and
                   skills.
                 </li>
-                <li className="mb-4 text-xl">
+                <li className="text-xl">
                   Development plan tailored to your needs and goals.
                 </li>
-                <li className="mb-4 text-xl">
+                <li className="text-xl">
                   Program duration: 1 year, with potential early graduation if
                   skills and opportunities align.
                 </li>
@@ -33,27 +35,23 @@ export default function LearningJourney() {
               We challenge you to grow and achieve new heights in your career.
             </p>
           </div>
-          <div className="flex justify-between">
-            <div className="w-32 h-32 bg-[#E7A956] rounded-br-full rounded-tl-full rounded-tr-full"></div>
-
-            <div className="flex ">
-              <div className="w-24 h-24 bg-[#67AEA6] rounded-full mr-20"></div>
-              {/* 
-
-  <div className="w-24 h-24 bg-[#E7A956] rounded-full"></div> */}
+          <div className="flex justify-between mt-8">
+            <div className="w-20 h-20 lg:w-32 lg:h-32 bg-[#E7A956] rounded-br-full rounded-tl-full rounded-tr-full"></div>
+            <div className="flex">
+              <div className="w-16 h-16 lg:w-24 lg:h-24 bg-[#67AEA6] rounded-full lg:mr-20"></div>
+              {/* <div className="w-24 h-24 bg-[#E7A956] rounded-full"></div> */}
             </div>
           </div>
           {/* <div className="bg-black flex justify-end mr-20">
-    
-  <div className="w-24 h-24 bg-[#E7A956] rounded-full"></div>
-   </div> */}
-        </div>{" "}
+            <div className="w-24 h-24 bg-[#E7A956] rounded-full"></div>
+          </div> */}
+        </div>
       </div>
-      <div className="w-30%">
+      <div className="lg:w-[50%] w-full hidden lg:flex  lg:mt-0">
         <img
           src="/images/nextgen3.png"
           alt="whatsinitforyou"
-          className="w-full h-full"
+          className="w-full h-full object-cover"
         />
       </div>
     </div>

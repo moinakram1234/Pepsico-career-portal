@@ -56,3 +56,13 @@ export const getUserByEmail = async (user_email) => {
     throw error;
   }
 };
+
+export const getUserByEmail_status_data = async (email) => {
+  try {
+    const formData = await FormData.findOne({ 'user_email': email });
+    return formData; // Returns the document if found, null otherwise
+  } catch (error) {
+    console.error('Error in getUserByEmail:', error.message);
+    throw error;
+  }
+};

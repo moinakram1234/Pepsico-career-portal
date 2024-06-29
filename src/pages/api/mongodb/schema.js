@@ -82,6 +82,7 @@ const FormDataSchema = new mongoose.Schema({
     location: String,
   },
   hasWorkExperience: String,
+appstatus: { type: String, default: 'inprogress' },
   user_email: { type: String, required: true },
   workExperience: [
     {

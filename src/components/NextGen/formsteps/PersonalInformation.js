@@ -1,13 +1,9 @@
-import Select from 'react-select';
-import CreatableSelect from 'react-select/creatable';
+import Select from "react-select";
+import CreatableSelect from "react-select/creatable";
 const languagesSpoken = [
- 
   { value: "English", label: "English" },
 
-
-
   { value: "Urdu", label: "Urdu" },
-  
 ];
 
 const PersonalInformation = ({ formData, handleChange }) => {
@@ -29,7 +25,7 @@ const PersonalInformation = ({ formData, handleChange }) => {
             name="gender"
             value="Male"
             onChange={handleChange}
-            checked={formData.gender === 'Male'}
+            checked={formData.gender === "Male"}
             className="mr-2"
           />
           Male
@@ -40,7 +36,7 @@ const PersonalInformation = ({ formData, handleChange }) => {
             name="gender"
             value="Female"
             onChange={handleChange}
-            checked={formData.gender === 'Female'}
+            checked={formData.gender === "Female"}
             className="mr-2"
           />
           Female
@@ -51,7 +47,7 @@ const PersonalInformation = ({ formData, handleChange }) => {
             name="gender"
             value="Other"
             onChange={handleChange}
-            checked={formData.gender === 'Other'}
+            checked={formData.gender === "Other"}
             className="mr-2"
           />
           Other
@@ -98,24 +94,24 @@ const PersonalInformation = ({ formData, handleChange }) => {
         className="border p-2 rounded w-full mb-4"
       /> */}
       <label className="block mb-2">What Languages Do You Speak?</label>
-      
-     <CreatableSelect
-  isMulti
-  name="languages"
-  options={languagesSpoken}
-  className="basic-multi-select"
-  classNamePrefix="select"
-  value={formData.languages}
-  onChange={(selectedOptions) => {
-    handleChange({
-      target: {
-        name: 'languages',
-        value: selectedOptions
-      }
-    });
-  }}
-  formatCreateLabel={(inputValue) => `Add "${inputValue}"`}
-/>
+
+      <CreatableSelect
+        isMulti
+        name="languages"
+        options={languagesSpoken}
+        className="basic-multi-select"
+        classNamePrefix="select"
+        value={formData.languages}
+        onChange={(selectedOptions) => {
+          handleChange({
+            target: {
+              name: "languages",
+              value: selectedOptions,
+            },
+          });
+        }}
+        formatCreateLabel={(inputValue) => `Add "${inputValue}"`}
+      />
       <label className="block mb-2">Permanent Address</label>
       <input
         type="text"
