@@ -1,0 +1,1 @@
+export const MisImage = { src: '/images/Frontend2.jpg', alt: 'Image1', width: 100, height: 100 };

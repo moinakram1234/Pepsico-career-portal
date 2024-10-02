@@ -1,0 +1,100 @@
+.slider {
+    position: relative;
+    overflow: hidden;
+}
+
+.slide {
+    display: none;
+}
+
+.slide.active {
+    display: block;
+}
+
+.prevButton,
+.nextButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 100;
+}
+
+.prevButton {
+    left: 0;
+}
+
+.nextButton {
+    right: 0;
+}
+.line {
+    position: absolute;
+    width: 200px;
+    height: 2px; /* Adjust based on spacing between steps */
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-0%);
+  }
+.curvedarrow {
+    position: relative;
+    width: 0;
+    height: 0;
+    margin-left: 30px;
+    border-top: 30px solid transparent; /* Increased size */
+    border-right: 30px solid white; /* Increased size */
+    transform: rotate(10deg); /* Use standard transform property */
+}
+
+.curvedarrow:after {
+    content: "";
+    position: absolute;
+    border: 0 solid transparent;
+    border-top: 12px solid rgb(0, 81, 255); /* Increased size */
+    border-radius: 80px 0 0 0; /* Increased size */
+    top: -38px; /* Adjusted position */
+    left: -36px; /* Adjusted position */
+    width: 48px; /* Increased size */
+    height: 48px; /* Increased size */
+    transform: rotate(45deg); /* Use standard transform property */
+}
+.wavedivider {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+  }
+
+  .wavedivider svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 60px;
+  }
+
+  @media (min-width: 768px) {
+    .wavedivider svg {
+      height: 150px;
+    }
+  }
+.animatedarrow {
+  animation: moveTBottom 2s infinite;
+}
+
+@keyframes moveTBottom {
+  0% {
+    transform: translateY(-50%) translateY(-50px); /* Start position */
+  }
+  50% {
+    transform: translateY(-50%) translateY(0); /* Middle position */
+  }
+  100% {
+    transform: translateY(-50%) translateY(50px); /* End position */
+  }
+}
